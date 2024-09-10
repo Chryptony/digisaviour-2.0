@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Form, Container, Col, Button, Row, Alert, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import Swal from 'sweetalert2';
-import { Form, Container, Col, Button, Row, Card } from 'react-bootstrap';
 
 const ContactUs = () => {
   useEffect(() => {
@@ -18,54 +19,42 @@ const ContactUs = () => {
   
   const formKontak = async (e) => {
     e.preventDefault();
-    
-    // Validasi keterangan
-    if (!keterangan.trim()) {
-      Swal.fire(
-        'Peringatan!',
-        'Kolom Keterangan tidak boleh kosong.',
-        'warning'
-      );
-      return;
-    }
-    
-    try {
-      const result = await Swal.fire({
-        title: 'Apakah anda yakin sudah isi dengan benar?',
-        text: "Pastikan semua data yang Anda masukkan sudah benar sekali lagi agar tidak salah kirim",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#059432',
-        cancelButtonColor: '#eb2f06',
-        confirmButtonText: 'Ya, konfirmasi!',
-        cancelButtonText: 'Batal'
-      });
-
-      if (result.isConfirmed) {
-        await axios.post('http://localhost:3001/api/servers', {
-          nama,
-          email,
-          telepon,
-          perihal,
-          keterangan,
+    Swal.fire({
+      title: 'Apakah anda yakin sudah isi dengan benar?',
+      text: "Pastikan semua data yang Anda masukkan sudah benar sekali lagi agar tidak salah kirim",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#059432',
+      cancelButtonColor: '#eb2f06',
+      confirmButtonText: 'Ya, konfirmasi!',
+      cancelButtonText: 'Batal'
+    }).then((result)=>{
+      if(result.isConfirmed){
+        axios.post('http://localhost:3003/api/servers',{
+          nama: nama,
+          email: email,
+          telepon: telepon,
+          perihal: perihal,
+          keterangan: keterangan,
+        }).then(()=>{
+          Swal.fire(
+            'Terkonfirmasi!',
+            'Formulir Anda telah terkirim.',
+            'success'
+          ).then(() => {
+            navigate('/contact-us',{replace:true});
+          })
+        }).catch((error)=>{
+          Swal.fire(
+            'Gagal!',
+            'Ada masalah dalam mengirim formulir.',
+            'error'
+          );
+          console.log(error.response);
         });
-
-        await Swal.fire(
-          'Terkonfirmasi!',
-          'Formulir Anda telah terkirim.',
-          'success'
-        );
-        navigate('/contact-us', { replace: true });
       }
-    } catch (error) {
-      Swal.fire(
-        'Gagal!',
-        'Ada masalah dalam mengirim formulir.',
-        'error'
-      );
-      console.log(error.response);
-    }
-  };
+    });
+  }
 
   return (
     <div>
@@ -103,7 +92,7 @@ const ContactUs = () => {
                     <Form.Group className="mb-3">
                       <Form.Label>Email</Form.Label>
                       <Form.Control 
-                        type="email"
+                        type="text"
                         value={email}
                         placeholder="email@gmail.com"
                         onChange={(e) => setEmail(e.target.value)} 
@@ -116,7 +105,7 @@ const ContactUs = () => {
                     <Form.Group className="mb-3">
                       <Form.Label>Nomor Telepon</Form.Label>
                       <Form.Control 
-                        type="tel"
+                        type="number"
                         value={telepon}
                         placeholder="081212121212"
                         onChange={(e) => setTelepon(e.target.value)} 
