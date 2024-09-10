@@ -5,13 +5,14 @@ const cors = require("cors")
 const database = require('./database')
 const serverRoute = require('./routes/server.route')
 
-var corsoption ={
-    origin : "http://localhost:3000"
-}
-app.use(cors(corsoption));
 
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(cors(corsoption));
+app.use(express.json())
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
+  
+app.use(express.urlencoded({extended:true}))
 
 database.sync(
     {force:true}
@@ -30,6 +31,4 @@ app.get("/",(req,res)=>{
 });
 
 app.use("/api/servers",serverRoute)
-
-
 app.listen(port,()=>console.log(`server up on port ${port}`));

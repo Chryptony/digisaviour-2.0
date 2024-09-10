@@ -1,13 +1,13 @@
 const Server = require("../models/server.model")
 exports.create = async(req,res)=>{
     try{
-        const{Nama, Email, Telepon, Perihal, Keterangan}=req.body;
+        const{nama, email, telepon, perihal, keterangan}=req.body;
         const server = await Server.create({
-            Nama,
-            Email,
-            Telepon,
-            Perihal,
-            Keterangan
+            nama,
+            email,
+            telepon,
+            perihal,
+            keterangan
         });
         return res.status(201).json({
             status : 201,
@@ -29,32 +29,34 @@ exports.create = async(req,res)=>{
         });
     }
 }
-exports.all = async(req, res)=>{
+
+exports.all = async(req,res)=>{
     try {
         const servers = await Server.findAll();
         return res.status(200).json({
             status : 200,
             success : true,
-            message : "get all orders",
-            data : { 
+            message : "get all book",
+            data : {
                 servers,
             },
             error : null
         });
-    } catch ( error ) {
+    } catch (error) {
         console.error(error);
         return res.status(500).json({
             status : 500,
             success : false,
             message : "error",
             data : null,
-            error : " internal server error"
+            error : "internal server error"
         });
     }
 }
-exports.find = async(req, res)=> {
+
+exports.find = async(req,res)=>{
     try {
-        const {id}= req.params;
+        const {id}=req.params;
         const server = await Server.findOne({
             where:{
                 id: id
@@ -89,6 +91,7 @@ exports.find = async(req, res)=> {
         });
     }
 }
+
 exports.update = async(req,res)=>{
     try {
         const {id}=req.params;

@@ -1,60 +1,61 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Form, Container, Col, Button, Row, Alert, Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Form, Container, Col, Button, Row, Card } from 'react-bootstrap';
+import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const ContactUs = () => {
   useEffect(() => {
     window.scrollTo(0, 0); // Melakukan scroll ke atas saat komponen dimuat
   }, []);
-  
+
   const [nama, setNama] = useState('');
   const [email, setEmail] = useState('');
   const [telepon, setTelepon] = useState('');
   const [perihal, setPerihal] = useState('');
   const [keterangan, setKeterangan] = useState('');
   const navigate = useNavigate();
-  
+
   const formKontak = async (e) => {
     e.preventDefault();
-    Swal.fire({
-      title: 'Apakah anda yakin sudah isi dengan benar?',
-      text: "Pastikan semua data yang Anda masukkan sudah benar sekali lagi agar tidak salah kirim",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#059432',
-      cancelButtonColor: '#eb2f06',
-      confirmButtonText: 'Ya, konfirmasi!',
-      cancelButtonText: 'Batal'
-    }).then((result)=>{
-      if(result.isConfirmed){
-        axios.post('http://localhost:3003/api/servers',{
-          nama: nama,
-          email: email,
-          telepon: telepon,
-          perihal: perihal,
-          keterangan: keterangan,
-        }).then(()=>{
-          Swal.fire(
-            'Terkonfirmasi!',
-            'Formulir Anda telah terkirim.',
-            'success'
-          ).then(() => {
-            navigate('/contact-us',{replace:true});
-          })
-        }).catch((error)=>{
-          Swal.fire(
-            'Gagal!',
-            'Ada masalah dalam mengirim formulir.',
-            'error'
-          );
-          console.log(error.response);
-        });
+    
+    try {
+      const result = await Swal.fire({
+        title: 'Apakah anda yakin sudah isi dengan benar?',
+        text: "Pastikan semua data yang Anda masukkan sudah benar sekali lagi agar tidak salah kirim",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#059432',
+        cancelButtonColor: '#eb2f06',
+        confirmButtonText: 'Ya, konfirmasi!',
+        cancelButtonText: 'Batal'
+      });
+
+      axios.post('http://localhost:3001/api/servers', {
+        nama: nama,
+        email: email,
+        telepon: telepon,
+        perihal: perihal,
+        keterangan: keterangan,
+      });
+
+        await Swal.fire(
+          'Form Anda sudah terkirim',
+          'Mohon menunggu, kami akan segera membalas pesan Anda ',
+          'success'
+        );
+
+        navigate('/contact-us', { replace: true });
       }
-    });
-  }
+     catch (error) {
+      Swal.fire(
+        'Maaf, form yang Anda isi ada yang salah',
+        'Mohon isi kembali.',
+        'silahkan coba lagi'
+      );
+      console.error('Error:', error.response || error);
+    }
+  };
 
   return (
     <div>
@@ -72,7 +73,7 @@ const ContactUs = () => {
         </div>
         <Container>
           <Row>
-            <Col className="text-start ap" md={8}>
+          <Col className="text-start ap" md={8}>
               <Card>
                 <Card.Body className="text-start contact1 border-opacity-0">
                   <Form onSubmit={formKontak}>
@@ -92,7 +93,7 @@ const ContactUs = () => {
                     <Form.Group className="mb-3">
                       <Form.Label>Email</Form.Label>
                       <Form.Control 
-                        type="text"
+                        type="email"
                         value={email}
                         placeholder="email@gmail.com"
                         onChange={(e) => setEmail(e.target.value)} 
@@ -105,7 +106,7 @@ const ContactUs = () => {
                     <Form.Group className="mb-3">
                       <Form.Label>Nomor Telepon</Form.Label>
                       <Form.Control 
-                        type="number"
+                        type="text"
                         value={telepon}
                         placeholder="081212121212"
                         onChange={(e) => setTelepon(e.target.value)} 
