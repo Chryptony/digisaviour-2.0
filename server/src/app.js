@@ -8,9 +8,9 @@ const serverRoute = require('./routes/server.route')
 
 app.use(cors(corsoption));
 app.use(express.json())
-app.use(cors({
-    origin: 'http://localhost:3000'
-  }));
+var corsoption ={
+    origin : "http://localhost:3000"
+}
   
 app.use(express.urlencoded({extended:true}))
 
