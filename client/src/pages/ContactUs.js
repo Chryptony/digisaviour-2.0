@@ -31,31 +31,48 @@ const ContactUs = () => {
         cancelButtonText: 'Batal'
       });
 
-      axios.post('http://localhost:3001/api/servers', {
-        nama: nama,
-        email: email,
-        telepon: telepon,
-        perihal: perihal,
-        keterangan: keterangan,
+      if (result.isConfirmed) {
+        // Mengirim data menggunakan axios
+        await axios.post('http://localhost:3001/api/servers', {
+          nama: nama,
+          email: email,
+          telepon: telepon,
+          perihal: perihal,
+          keterangan: keterangan,
+        });
+    
+        // Menampilkan konfirmasi pengiriman form
+        await Swal.fire({
+          title: 'Form Anda sudah terkirim',
+          text: 'Mohon menunggu, kami akan segera membalas pesan Anda',
+          icon: 'success',
+          confirmButtonColor: '#059432',
+          confirmButtonText: 'Oke deh'
+        });
+    
+        // Navigasi setelah konfirmasi
+        navigate('/contact-us', { replace: true });
+      } else {
+        // Jika user mengklik "Batal", tidak melakukan apa-apa atau menampilkan pesan
+        Swal.fire({
+          title: 'Form anda tidak jadi dikirimkan',
+          text: 'Mohon segera perbaiki isi form.',
+          icon: 'info',
+          confirmButtonColor: '#e74c3c',
+          confirmButtonText: 'Ok deh'
+        });
+      }
+    } catch (error) {
+      // Menangani error jika terjadi
+      Swal.fire({
+        title: 'Terjadi kesalahan',
+        text: 'Ada masalah saat mengirim data. Silakan coba lagi.',
+        icon: 'error',
+        confirmButtonColor: '#059432',
+        confirmButtonText: 'Oke'
       });
-
-      await Swal.fire(
-        'Form Anda sudah terkirim',
-        'Mohon menunggu, kami akan segera membalas pesan Anda ',
-        'success'
-      );
-
-      navigate('/contact-us', { replace: true });
     }
-    catch (error) {
-      Swal.fire(
-        'Maaf, form yang Anda isi ada yang salah',
-        'Mohon isi kembali.',
-        'silahkan coba lagi'
-      );
-      console.error('Error:', error.response || error);
-    }
-  };
+  }
 
   return (
     <div>
@@ -72,9 +89,10 @@ const ContactUs = () => {
           <h1>KONTAK KAMI</h1>
           <p>Silahkan kirim pesan anda via form dibawah ini. Kami akan segera membalasnya segera</p>
         </div>
-        <div class="container text-center">
+        <div className="container-fluid ">
+        <div class="container text-center ">
           <div class="row align-items-center">
-            <div class="col">
+            <div class="col as">
               <Container>
                 <Row>
                   <Col className="text-start ap" md={12}>
@@ -156,14 +174,14 @@ const ContactUs = () => {
               </Container>
             </div>
             <div class="col">
-              <div className="text-start aq">
+              <div className="text-start element aq">
                 <p className="ar"><span className="fw-bold">Digisaviour</span> mencegah dan mengatasi Kerak (Scaling) tanpa menggunakan bahan kimia</p>
                 <p className="py-5">Hubungi kami pada jam dan hari kerja untuk mengetahui lebih lanjut tentang Digisaviour. Anda dapat menghubungi kami dengan mengklik tombol kontak kami atau melalui form. Kami menghargai ketertarikan anda terhadap Digisaviour</p>
               </div>
             </div>
           </div>
         </div>
-
+        </div>
       </div>
     </div>
   );

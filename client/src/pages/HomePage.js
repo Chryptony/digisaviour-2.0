@@ -17,8 +17,8 @@ const HomePage = () => {
           <h5 className="text-start">mau coba beralih dari bahan kimia untuk mengatasi scaling problem ?</h5>
         </div>
       </div>
-      <div className="container-fluid homescreen3">
-        <div class="container text-center">
+      <div className="container-fluid ">
+        <div class="container text-center homescreen3">
           <div class="row align-items-center">
             <div class="col">
               <img src={Ten}/>

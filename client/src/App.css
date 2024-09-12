@@ -63,7 +63,9 @@ body {
     padding-top: 50px;
     padding-bottom: 60px;
   }
-
+  .homescreen3{
+    padding-top:50px;
+  }
   .produk1 {
     background-image: url('./images/coolingtower.jpg');
     color: white;
@@ -345,11 +347,26 @@ body {
       margin-left: 60px;
       margin-right: 60px;
       font-size: 18px;
+      padding-left: 30px;
     }
     .ar{
       font-size:30px;
     }
+    .element {
+      border-left: 2px solid #ffffff; /* Menambahkan border-top */
+      padding-top: 30px;
+      margin-top: 30px;
+      margin-left: 20px;
   }
+  }
+  .swal2-popup {
+    margin-right: 100px;
+    margin-left:60px;
+    width: 600px; /* Atur lebar sesuai kebutuhan */
+    height: auto; /* Biarkan tinggi otomatis untuk menyesuaikan konten */
+    max-width: 90vw; /* Agar pop-up tidak terlalu besar pada layar kecil */
+    max-height: 80vh;
+}
 }
 
 @media only screen and (min-device-width: 280px)and (max-width:767px) {
@@ -406,7 +423,9 @@ body {
     padding-top: 50px;
     padding-bottom: 120px;
   }
-
+  .homescreen3{
+    padding-top:50px;
+  }
   .produk1 {
     background-image: url('./images/coolingtower.jpg');
     color: white;
@@ -682,30 +701,39 @@ body {
       color: white;
       padding-bottom: 30px;
       padding-left: 20px;
+      /* margin-right: 60px; */
+      padding-right: 60px;
     }
-    
     .ap{
       margin-left: -50px;
     }
-    .col{
-      margin-left: 35px;
-      /* padding-left: 50px; */
-      margin-right:-45px;
-      /* padding-right: 50px; */
-      .aq{
-        margin-left: -120px;
-        padding-left: 60px;
-        margin-right: 80px;
-        font-size: 14px;
-        .h1{
-          font-size: 12px;
-        }
-      } 
-      .ar{
-        font-size:22px;
-      }
+    .aq{
+      margin-left: 60px;
+      margin-right: 60px;
+      font-size: 18px;
+      
+    }
+    .element {
+      border-top: 2px solid #ffffff; /* Menambahkan border-top */
+      padding-top: 30px;
+      margin-top: 30px;
+      margin-left: 20px;
+  }
+    .ar{
+      font-size:30px;
+    }
+    .as{
+      padding-left: 30px;
     }
   }
+  .swal2-popup {
+    margin-right: 100px;
+    margin-left:60px;
+    width: 350px; /* Atur lebar sesuai kebutuhan */
+    height: auto; /* Biarkan tinggi otomatis untuk menyesuaikan konten */
+    max-width: 90vw; /* Agar pop-up tidak terlalu besar pada layar kecil */
+    max-height: 80vh;
+}
 }
 
 @media only screen and (min-device-width: 768px)and (max-width:1024px) {
@@ -1047,26 +1075,30 @@ body {
     }
     .ap{
       margin-left: -50px;
+      padding-left: 60px;
+      margin-right: 50px;
     }
-    .col{
-      margin-left: 35px;
-      /* padding-left: 50px; */
-      margin-right:-45px;
-      /* padding-right: 50px; */
-      .aq{
-        margin-left: -120px;
-        padding-left: 60px;
-        margin-right: 80px;
-        font-size: 14px;
-        .h1{
-          font-size: 12px;
-        }
-      } 
-      .ar{
-        font-size:22px;
-      }
+    .as{
+      margin-right: -50px;
     }
+    .element {
+      border-left: 2px solid #ffffff; /* Menambahkan border-top */
+      padding-top: 30px;
+      margin-top: 30px;
+      margin-left: -20px;
+      padding-left: 20px;
   }
+  .ar{
+    font-weight: bold;
+    font-size: 20px;
+  }
+  }
+  .swal2-popup {
+    width: 350px; /* Atur lebar sesuai kebutuhan */
+    height: auto; /* Biarkan tinggi otomatis untuk menyesuaikan konten */
+    max-width: 90vw; /* Agar pop-up tidak terlalu besar pada layar kecil */
+    max-height: 80vh;
+}
 }
 
 @media only screen and (min-device-width:1920px) {
@@ -1474,5 +1506,24 @@ body {
     .ar{
       font-size:30px;
     }
+    .element {
+      border-left: 2px solid #ffffff; /* Menambahkan border-top */
+      padding-top: 30px;
+      margin-top: 30px;
+      margin-left: -20px;
+      padding-left: 20px;
   }
+  }
+  .swal2-popup {
+    margin-right: 100px;
+    margin-left:60px;
+    width: 800px; /* Atur lebar sesuai kebutuhan */
+    height: 600px; /* Biarkan tinggi otomatis untuk menyesuaikan konten */
+    max-width: 90vw; /* Agar pop-up tidak terlalu besar pada layar kecil */
+    max-height: 80vh;
+    font-size: 24px;
+    
+}.swal2.title {
+      font-weight: bold;
+    }
 }
