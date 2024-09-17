@@ -16,7 +16,6 @@ const Konsultasi = () => {
       <div class="container-fluid">
           <h3 className="text-center">Anda memiliki masalah kerak( scaling ) di Heat Exchanger dan Cooling Tower</h3>
           <h3 className="text-center fw-bold">atau mau konsultasi gratis dengan tim ahli kami ?</h3>
-          <p className="text-center py-5"> klik link dibawah ini</p>
         </div>
         <Link className="link-underline link-underline-opacity-0 text btn btn-outline-success btn-lg fw-bold" to="/konsultasi">Konsultasi Gratis</Link>
       </div>

@@ -39,6 +39,7 @@ body {
 
   .navbar2 {
     padding-left: -550px;
+    
   }
 
   .homescreen {
@@ -56,6 +57,9 @@ body {
       margin-left:50px;
       margin-bottom: 40px;
     }
+    .btn-outline-light{
+      border-width: 3px;
+    }
   }
 
   .homescreen2 {
@@ -63,10 +67,23 @@ body {
     padding-top: 50px;
     padding-bottom: 60px;
     background-image: url('./images/background11.jpg');
+    .btn-outline-success{
+      border-width: 3px;
+    }
+    h3{
+      padding-bottom:20px;
+    }
   }
   .homescreen3{
     padding-top:50px;
+    
     background-image: url('./images/background11.jpg');
+    .a2{
+      margin-left:-90px;
+    }
+    .btn-outline-dark{
+      border-width: 3px;
+    }
   }
   .produk1 {
     background-image: url('./images/coolingtower.jpg');
@@ -328,6 +345,11 @@ body {
     background-color: #ecf0f1;
     padding-top: 30px;
     padding-bottom: 30px;
+    .btn-outline-success{
+      font-size:18px;
+      font-weight: bold;
+      border-width: 3px;
+    }
   }
   .contact1{
     background-color: #2c3e50;
@@ -418,6 +440,12 @@ body {
     .t1 {
       color: red;
     }
+    .btn-outline-light{
+      border-width: 3px;
+    }
+    .a2{
+      margin-left: 20px;
+    }
   }
 
   .homescreen2 {
@@ -425,6 +453,17 @@ body {
     padding-top: 50px;
     padding-bottom: 120px;
     background-image: url('./images/background11.jpg');
+    .btn-outline-success{
+      border-width: 3px;
+    }
+    h3{
+      padding-bottom:50px;
+      margin-top: 50px;
+    }
+    .a2{
+      margin-top: 20px;
+      
+    }
   }
   .homescreen3{
     padding-top:50px;
@@ -1185,6 +1224,10 @@ body {
         margin-left: 30px;
       }
     }
+    .btn-outline-light{
+      border-width: 4px;
+      font-size: 28px;
+    }
   }
 
   .homescreen2 {
@@ -1196,7 +1239,10 @@ body {
     h3{
       font-size:34px;
     }
-
+    .btn-outline-success{
+      border-width: 3px;
+      font-size: 28px;
+    }
   }
 
   .produk1 {
@@ -1487,6 +1533,12 @@ body {
     background-color: #ecf0f1;
     padding-top: 30px;  
     padding-bottom: 30px;
+    font-size:26px;
+    .btn-outline-success{
+      font-size:28px;
+      font-weight: bold;
+      border-width: 4px;
+    }
   }
   .contact1{
     background-color: #2c3e50;
@@ -1541,20 +1593,34 @@ body {
       padding-top:150px;
       padding-bottom:250px;
       background-image: url('./images/background11.jpg');
-      
-    }
-    .a2 {
-      margin-left: 10px;
-      h5{
-        margin-left: 5px;
+      img {
+        object-fit: contain;
+        width: 700px;
+        margin-left: -150px;
+        margin-top: 10px;
       }
-        img {
-          object-fit: contain;
-          width: 300px;
-          margin-left: 30px;
+      .a2 {
+        margin-left: 10px;
+        h5{
+          margin-left: 5px;
+          font-size: 28px;
         }
-      }
-      .t1 {
-        margin-left:-50px;
-      }
+          img {
+            object-fit: contain;
+            width: 300px;
+            margin-left: 30px;
+          }
+          h3 {
+            font-size: 28px;
+            padding-bottom: 20px;
+          }
+        }
+        .t1 {
+          margin-left:-50px;
+        }
+        .btn-outline-dark {
+          font-size:24px;
+        }
+    }
+    
 }

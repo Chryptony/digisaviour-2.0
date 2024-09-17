@@ -25,8 +25,8 @@ const HomePage = () => {
             </div>
             <div class="col">
               <div class="container-fluid a2">
-                <h3 className="text-start">Tidak perlu bahan kimia untuk mencegah dan mengatasi</h3>
-                <h3 className="text-start fw-bold">kerak di fasilitas Cooling Tower</h3>
+                <h3 className="text-start"><span className="fw-bold">Digisaviour</span> hadir untuk membantu anda dalam mengatasi kerak pada cooling tower anda</h3>
+                <h5 className="text-start py-2 ">tanpa perlu menggunakan bahan kimia untuk mencegah dan mengatasi kerak pada Cooling Tower</h5>
                 <h5 className="text-start py-5"> Mau tau cara praktis dan ekonomis untuk mengatasi scaling problem ?</h5>
               </div>
               <Link className=" link-underline link-underline-opacity-0 text btn btn-outline-dark btn-lg fw-bold a2" to="/Produk-Digisaviour"> MAU TAU DONG</Link>
