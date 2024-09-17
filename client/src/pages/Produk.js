@@ -311,7 +311,7 @@ const Produk = () => {
       <div className="container-fluid text-center an">
         <p className="text-center  fw-bold "> Anda memiliki masalah kerak ( scaling ) di Heat Exchanger dan Cooling Tower ?</p>
         <p className="text-center fw-bold "> Mau konsultasi gratis dengan tim ahli kami ?</p>
-        <Link to="/contact-us" className=" btn btn-success btn-lg">konsultasi gratis</Link>
+        <Link to="/contact-us" className=" btn btn-outline-success btn-lg">konsultasi gratis</Link>
       </div>
     </div>
   )

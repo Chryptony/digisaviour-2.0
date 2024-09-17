@@ -62,9 +62,11 @@ body {
     background-color: #ecf0f1;
     padding-top: 50px;
     padding-bottom: 60px;
+    background-image: url('./images/background11.jpg');
   }
   .homescreen3{
     padding-top:50px;
+    background-image: url('./images/background11.jpg');
   }
   .produk1 {
     background-image: url('./images/coolingtower.jpg');
@@ -422,9 +424,11 @@ body {
     background-color: #ecf0f1;
     padding-top: 50px;
     padding-bottom: 120px;
+    background-image: url('./images/background11.jpg');
   }
   .homescreen3{
     padding-top:50px;
+    background-image: url('./images/background11.jpg');
   }
   .produk1 {
     background-image: url('./images/coolingtower.jpg');
@@ -790,6 +794,7 @@ body {
     background-color: #ecf0f1;
     padding-top: 50px;
     padding-bottom: 1500px;
+    background-image: url('./images/background11.jpg');
   }
 
   .produk1 {
@@ -1099,6 +1104,11 @@ body {
     max-width: 90vw; /* Agar pop-up tidak terlalu besar pada layar kecil */
     max-height: 80vh;
 }
+.homescreen3{
+  padding-top:150px;
+  padding-bottom: 500px;
+  background-image: url('./images/background11.jpg');
+}
 }
 
 @media only screen and (min-device-width:1920px) {
@@ -1182,6 +1192,7 @@ body {
     padding-top: 50px;
     padding-bottom: 1500px;
     font-size: 30px;
+    background-image: url('./images/background11.jpg');
     h3{
       font-size:34px;
     }
@@ -1526,4 +1537,24 @@ body {
 }.swal2.title {
       font-weight: bold;
     }
+    .homescreen3{
+      padding-top:150px;
+      padding-bottom:250px;
+      background-image: url('./images/background11.jpg');
+      
+    }
+    .a2 {
+      margin-left: 10px;
+      h5{
+        margin-left: 5px;
+      }
+        img {
+          object-fit: contain;
+          width: 300px;
+          margin-left: 30px;
+        }
+      }
+      .t1 {
+        margin-left:-50px;
+      }
 }
