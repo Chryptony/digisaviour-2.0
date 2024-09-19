@@ -17,7 +17,7 @@ const Konsultasi = () => {
           <h3 className="text-center">Anda memiliki masalah kerak( scaling ) di Heat Exchanger dan Cooling Tower</h3>
           <h3 className="text-center fw-bold">atau mau konsultasi gratis dengan tim ahli kami ?</h3>
         </div>
-        <Link className="link-underline link-underline-opacity-0 text btn btn-outline-success btn-lg fw-bold" to="/konsultasi">Konsultasi Gratis</Link>
+        <Link className="link-underline link-underline-opacity-0 text btn btn-outline-success btn-lg fw-bold" to="https://api.whatsapp.com/send?phone=6281287871362&text=hi, saya ingin berkonsultasi perihal Digisaviour">Konsultasi Gratis</Link>
       </div>
     </div>
   )

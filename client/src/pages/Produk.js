@@ -95,9 +95,17 @@ const Produk = () => {
               <p>Konduktifitas dari kerak adalah 1/2000 lebih rendah</p>
               <img src={Four} />
             </div>
-            <div class="container text-center">
-              <p className="text-center text1">Walaupun ketebalan kerak yang ada pada Heat Exchanger kurang dari 1 mm, konsumsi energi akan meningkat lebih dari 20%</p>
-              <img src={Five} />
+            <div class="container text-center img1">
+              <div class="container text-center">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <p className="text-center text1">Walaupun ketebalan kerak yang ada pada Heat Exchanger kurang dari 1 mm, konsumsi energi akan meningkat lebih dari 20%</p>
+                  </div>
+                  <div class="col">
+                    <img src={Five} />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
