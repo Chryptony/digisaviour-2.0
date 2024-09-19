@@ -29,7 +29,7 @@ const HomePage = () => {
                 <h5 className="text-start py-2 ">tanpa perlu menggunakan bahan kimia untuk mencegah dan mengatasi kerak pada Cooling Tower</h5>
                 <h5 className="text-start py-5"> Mau tau cara praktis dan ekonomis untuk mengatasi scaling problem ?</h5>
               </div>
-              <Link className=" link-underline link-underline-opacity-0 text btn btn-outline-dark btn-lg fw-bold a2" to="/Produk-Digisaviour"> MAU TAU DONG</Link>
+              <Link className=" link-underline link-underline-opacity-0 text btn btn-outline-dark btn-lg fw-bold" to="/Produk-Digisaviour"> MAU TAU DONG</Link>
             </div>
           </div>
         </div>
